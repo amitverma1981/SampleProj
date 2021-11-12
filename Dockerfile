@@ -17,7 +17,7 @@ WORKDIR /var/www/html
 WORKDIR /var/www/html/laravelapp
 RUN sudo composer create-project laravel/laravel laravelapp --prefer-dist
 RUN sudo chown -R www-data:www-data /var/www/html/laravelapp
-RUN sudo chmod -R 775 /var/www/html/laravelapp/storage
+#RUN sudo chmod -R 775 /var/www/html/laravelapp/storage
 COPY /app/SampleProj/laravel.conf /etc/apache2/sites-available/
 RUN sudo nano /etc/apache2/sites-available/laravel.conf
 RUN sudo a2ensite laravel.conf
